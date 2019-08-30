@@ -25,13 +25,13 @@ XHTML은 기존에 사용되던 HTML을 XML 바탕으로 새롭게 구성하여 
 ### XHTML에서만 가능한 일
 
 - CDATA 섹션 사용
-    ```xml
+    <pre><code class="html">
     <![CDATA[ ... ]]>
-    ```
+    </code></pre>
 - processing-instruction 사용. 예를 들어 XML 문서에 스타일시트를 연결시킬 수 있다.
-    ```xml
-    <?xml-stylesheet type="text/css" href="style.css" media="screen"?>
-    ```
+    <pre><code class="html">
+        <?xml-stylesheet type="text/css" href="style.css" media="screen"?>
+    </code></pre>
 - 다른 XML 이름 영역(namespace)에 있는 요소들을 포함 시킬 수 있다.
 
 ### HTML에서는 가능하나, XHTML에서는 불가능한 일
