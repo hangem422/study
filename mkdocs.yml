@@ -1,1 +1,7 @@
-site_name: My Docs
+site_name: Front Study
+theme: readthedocs
+
+pages:
+  - Home: README.md
+  - Interview:
+      - "DocType": "interview/doctype.md"
