@@ -25,13 +25,9 @@ XHTML은 기존에 사용되던 HTML을 XML 바탕으로 새롭게 구성하여 
 ### XHTML에서만 가능한 일
 
 - CDATA 섹션 사용
-    <pre><code class="html">
-    <![CDATA[ ... ]]>
-    </code></pre>
+    <pre><code class="html"><![CDATA[ ... ]]></code></pre>
 - processing-instruction 사용. 예를 들어 XML 문서에 스타일시트를 연결시킬 수 있다.
-    <pre><code class="html">
-        <?xml-stylesheet type="text/css" href="style.css" media="screen"?>
-    </code></pre>
+    <pre><code class="html"><?xml-stylesheet type="text/css" href="style.css" media="screen"?></code></pre>
 - 다른 XML 이름 영역(namespace)에 있는 요소들을 포함 시킬 수 있다.
 
 ### HTML에서는 가능하나, XHTML에서는 불가능한 일
@@ -41,13 +37,11 @@ XHTML은 기존에 사용되던 HTML을 XML 바탕으로 새롭게 구성하여 
 - `&npsp;`와 같은 named entity를 사용할 수 없다. 미리 정의된 `&lt;`, `&gt;`, `&amp;`, `&quot;`는 사용 가능하다.
 - 자바 스크립트에서 `innerHTML`속성을 사용할 수 없다.
 - 스스로 닫히는 태그(self closing tag)를 꼭 닫아줘야 한다.
-    ```xml
-    <!-- HTML 방식 -->
+    <pre><code class="html"><!-- HTML 방식 -->
     <img src="../img.png" alt="이미지는 그 스스로가 내용입니다." />
 
     <!-- XHTML 방식 -->
-    <img src="../img.png" alt="이미지는 그 스스로가 내용입니다." />
-    ```
+    <img src="../img.png" alt="이미지는 그 스스로가 내용입니다." /></code></pre>
 
 ### CSS를 이해하는 방식의 차이
 
@@ -94,33 +88,19 @@ XHTML은 기존에 사용되던 HTML을 XML 바탕으로 새롭게 구성하여 
 ### 종류별 선언
 
 - HTML4.01 Strict
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"></code></pre>
 - HTML4.01 Transitional
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"></code></pre>
 - HTML4.01 Frameset
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"></code></pre>
 - XHTML 1.0 Strict
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"></code></pre>
 - XHTML 1.0 Transitional
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"></code></pre>
 - XHTML 1.0 Frameset
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"></code></pre>
 - XHTML 1.1
-    ```xml
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-    ```
+    <pre><code class="html"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"></code></pre>
 
 ## 4. 표준과 비 표준
 
