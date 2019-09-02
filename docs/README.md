@@ -8,3 +8,5 @@
     - [DocType](./interview/doctype.md)
 - **REACT**
     - [Intorduce](./react/about.md)
+    - [Component](./react/component.md)
+    - [JSX](./react/jsx.md)
