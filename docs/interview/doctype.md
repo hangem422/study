@@ -50,7 +50,7 @@ XHTML은 기존에 사용되던 HTML을 XML 바탕으로 새롭게 구성하여 
 
 ### CSS를 이해하는 방식의 차이
 
-- XHTML에서는 CSSdml Elemnet type 선택자가 대문자와 소문자를 구별한다.
+- XHTML에서는 CSS의 Elemnet type 선택자가 대문자와 소문자를 구별한다.
 - HTML에서는 BODY 요쇼의 background-color, background-image, overflow 속성이 최상위 요소(HTML)에도 적용되지만 XHTML에서는 적용되지 않는다.
 
 ### XHTML에서 스크립트를 다루는 방식
