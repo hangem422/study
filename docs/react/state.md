@@ -199,7 +199,7 @@ handleIncrease() {
   const { number } = this.state;
   this.serState({
     number: number + 1
-  })
+  });
 }
 ```
 

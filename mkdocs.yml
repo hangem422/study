@@ -7,6 +7,7 @@ pages:
       - "DocType": "interview/doctype.md"
   - React:
       - "Introduce": "react/about.md"
+      - "Start": "react/start.md"
       - "Component": "react/component.md"
       - "JSX": "react/jsx.md"
       - "Props": "react/props.md"
