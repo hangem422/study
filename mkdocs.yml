@@ -5,5 +5,5 @@ pages:
   - Home: README.md
   - Interview:
       - "DocType": "interview/doctype.md"
-  - react:
+  - React:
       - "Introduce": "react/about.md"
