@@ -100,6 +100,102 @@ MyName.propTypes = {
 }
 ```
 
-## 5. 출처
+## 5. 부모 컴포넌트에 정보 전달
+
+부모 컴포넌트에서 메소드를 만들고, 이 메소드를 자식에게 전달한 다음 자식 내부에서 호출하는 방식을 사용합니다.
+
+### 부모 컴포넌트
+
+```JSX
+import React, { Component } from 'react';
+import Child from './Child';
+
+class Parent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      phone: '',
+    };
+  }
+
+  // input의 value를 바꾸는 메소드
+  handleChnage = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  // 입력한 데이터를 전송하고 input을 비워즈는 메소드
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const { name, phone } = this.state;
+    console.log(`${name}의 전화번호는 ${phone} 입니다.`);
+    this.setState({
+      name: '',
+      phone: '',
+    });
+  }
+
+  // Child로 데이터와 그 데이터를 변형시키는 함수를 넘겨줍니다.
+  render() {
+    const { name, phone } = this.state;
+
+    return (
+      <div>
+        <Child
+          name={name}
+          phone={phone}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+        />
+      </div>
+    );
+  }
+}
+
+export default Parent;
+```
+
+### 자식 컴포넌트
+
+```JSX
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+// 함수형 컴포넌트입니다.
+const Child = ({
+  name,
+  phone,
+  handleChange,
+  handleSubmit,
+}) => (
+  <form onSubmit={this.handleSubmit}>
+    <input
+      placeholder="name"
+      name="name"
+      value={name}
+      onChange={handleChange}
+    />
+    <input
+      placeholder="phone"
+      name="phone"
+      value={name}
+      onChange={handleChange}
+    />
+  </form>
+);
+
+// 부모로부터 전달받은 데이터 타입을 검증합니다.
+Child.propTypes = {
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+};
+
+export default Child;
+```
+
+## 6. 출처
 
 - [https://velopert.com](https://velopert.com/3629)

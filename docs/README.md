@@ -11,6 +11,6 @@
     - [Start](./react/start.md)
     - [Component](./react/component.md)
     - [JSX](./react/jsx.md)
-    - [Props](./react/props.md)
     - [State](./react/state.md)
+    - [Props](./react/props.md)
     - [LifeCycle](./react/lifecycle.md)
