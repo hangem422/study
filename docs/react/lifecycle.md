@@ -23,12 +23,12 @@ class Mounting extends React.Component {
 }
 ```
 
-## constructor
+### constructor
 
 - 생성자 메소드로 컴포넌트가 생성될 때 **단 한번만** 실행됩니다.
 - 이 메소드에서만 `state`를 설정할 수 있습니다.
 
-## componentDidMount
+### componentDidMount
 
 - 컴포넌트가 만들어지고 `render()` 함수가 끝난 이후에 호출되는 메소드입니다. 
 - 다음과 같은 작업을 수행하기 적합합니다.
@@ -115,7 +115,7 @@ class Unmounting extends React.Component {
 - 컴포넌트가 DOM에서 삭제된 후 실행되는 메소드입니다.
 - 다음과 같은 작업을 수행하기 적합합니다.
     - 이벤트 제거
-    - `clearTimeout()`이나 `clearInterval()`을 사용하여 Timout과 Interval을 제거합니다.
+    - `clearTimeout()`이나 `clearInterval()`을 사용하여 Timeout과 Interval을 제거합니다.
     - 외부 라이브러리의 `dispose` 기능을 호출합니다.
 
 ## 4. Error
