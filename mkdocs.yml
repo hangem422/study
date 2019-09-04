@@ -13,3 +13,6 @@ pages:
       - "State": "react/state.md"
       - "Props": "react/props.md"
       - "LifeCycle": "react/lifecycle.md"
+      - "DOM": "react/dom.md"
+  - React Library:
+      - "Immutable": "react-library/immutable.md"

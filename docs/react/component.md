@@ -62,6 +62,10 @@ import App from './App';
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
+## 3. 컴포넌트 배열 사용하기
+
+작성중...
+
 ## 3. 출처
 
 - [Https://velopert.com](https://velopert.com/3626)

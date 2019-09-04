@@ -2,11 +2,11 @@
 
 ## 1. Webpack
 
-작성중
+작성중...
 
 ## 2. Babel
 
-작성중
+작성중...
 
 ## 3. create-react-app
 
