@@ -29,4 +29,4 @@ create-react-app [Project Name]
 ```
 
 ## 4. 출처
-- [https://velopert.com](https://velopert.com/3621)
+- [VELOPERT.LOG](https://velopert.com/3621)

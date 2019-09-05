@@ -17,4 +17,4 @@ DOM에 직접적인 접근을 해야 할 때는 다음과 같습니다.
 
 ## 2. 출처
 
-- [Https://velopert.com](https://velopert.com/1148)
+- [VELOPERT.LOG](https://velopert.com/1148)

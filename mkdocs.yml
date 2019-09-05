@@ -16,3 +16,5 @@ pages:
       - "DOM": "react/dom.md"
   - React Library:
       - "Immutable": "react-library/immutable.md"
+  - React Styling:
+      - "Scss": "react-styling/sass.md"

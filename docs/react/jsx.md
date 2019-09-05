@@ -160,4 +160,4 @@ return (
 
 ## 8. 출처
 
-- [Https://velopert.com](https://velopert.com/3626)
+- [VELOPERT.LOG](https://velopert.com/3626)

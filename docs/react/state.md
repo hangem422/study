@@ -264,4 +264,4 @@ class Counter extends Component {
 
 ## 4. 출처
 
-- [https://velopert.com](https://velopert.com/3629)
+- [VELOPERT.LOG](https://velopert.com/3629)

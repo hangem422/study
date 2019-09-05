@@ -212,4 +212,4 @@ const nextNested = nested.setIn(['foo', 'bar'], false);
 
 ## 5. 출처
 
-- [https://velopert.com](https://velopert.com/3486)
+- [VELOPERT.LOG](https://velopert.com/3486)

@@ -55,4 +55,4 @@
 - Mithril
 
 ## 3. 출처
-- [https://velopert.com](https://velopert.com/3612)
+- [VELOPERT.LOG](https://velopert.com/3612)
