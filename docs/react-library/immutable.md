@@ -1,6 +1,6 @@
 # Immutable
 
-> `setState()`는 객체 깊숙한 곳 까지 확인하지 못하여, **전개 연산자**를 사용해야합니다. 이러한 작업은 복잡하므로 **immutable.js** 같은 라이브러리를 사용합니다.
+> `setState()`는 객체 깊숙한 곳 까지 확인하지 못하여, **전개 연산자**를 사용해야합니다. 이러한 작업은 복잡하므로 **immutable.js**을 사용합니다.
 
 ## 1. 설치하기
 
@@ -209,3 +209,7 @@ const nested = Record({
 const nextNested = nested.setIn(['foo', 'bar'], false);
 // nextNested.foo.bar === false
 ```
+
+## 5. 출처
+
+- [https://velopert.com](https://velopert.com/3486)
