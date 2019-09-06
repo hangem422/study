@@ -5,7 +5,7 @@
 ## Contents
 
 - **INTERVIEW**
-  - [DocType](./interview/doctype.md)
+    - [DocType](./interview/doctype.md)
 - **REACT**
     - [Intorduce](./react/about.md)
     - [Start](./react/start.md)
@@ -15,6 +15,7 @@
     - [Props](./react/props.md)
     - [LifeCycle](./react/lifecycle.md)
     - [DOM](./react/dom.md)
+    - [HOC](./react/hoc.md)
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
 - **REACT STYLING**

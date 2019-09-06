@@ -14,6 +14,7 @@ pages:
       - "Props": "react/props.md"
       - "LifeCycle": "react/lifecycle.md"
       - "DOM": "react/dom.md"
+      - "HOC": "react/hoc.md"
   - React Library:
       - "Immutable": "react-library/immutable.md"
   - React Styling:
