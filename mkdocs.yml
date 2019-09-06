@@ -19,3 +19,4 @@ pages:
   - React Styling:
       - "Scss": "react-styling/sass.md"
       - "Module": "react-styling/module.md"
+      - "Styled Components": "react-styling/styled-components"
