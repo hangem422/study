@@ -4,7 +4,7 @@
 
 ## 1. Sass 혹은 SCSS
 
-**Sasss**는 처음에 들여쓰기의 감지를 그 핵심 특성으로 갖는 구문을 가리켰습니다. Sass를 유지하는 사람들은 Sassy Css룰 의미하는 **SCSS**라는 CSS 친화적인 구문을 제공함으로써 Sass와 CSS 사이의 차이를 좁히기로 결정했습니다.
+**Sasss**는 처음에 들여쓰기의 감지를 그 핵심 특성으로 갖는 구문을 가리켰습니다. Sass를 유지하는 사람들은 Sassy Css를 의미하는 **SCSS**라는 CSS 친화적인 구문을 제공함으로써 Sass와 CSS 사이의 차이를 좁히기로 결정했습니다.
 
 ### .sass
 ```scss
@@ -35,7 +35,7 @@ body {
 npm install --save node-sass
 ```
 
-.sass 파일을 `import`하여 사용할 수 있습니다.
+이제 .sass 파일을 `import`하여 사용할 수 있습니다.
 
 ```javascript
 import './main.scss';
@@ -78,7 +78,7 @@ $font-type: sans-serif;
 ```
 ## 2. 숫자
 
-Sass에서 숫자는 단위가 없는 숫자부터 길이, 기간, 빈도, 각도 등ㅔ 이르기까지 모든 것을 포함하는 데이터 타입입니다. 덕분에 연산이 가능해집니다.
+Sass에서 숫자는 단위가 없는 숫자부터 길이, 기간, 빈도, 각도 등에 이르기까지 모든 것을 포함하는 데이터 타입입니다. 덕분에 연산이 가능해집니다.
 
 ### 단위
 
@@ -706,7 +706,7 @@ CSS와 관련된 가이드라인에 더해, Sass에서는 다음 사항들에 �
 //...
 ```
 
-## 출처
+## 17. 출처
 
 - [https://velog.io/@velopert](https://velog.io/@velopert/react-component-styling)
 - [Sass Guildelines](https://sass-guidelin.es/ko/)

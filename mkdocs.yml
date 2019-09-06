@@ -18,3 +18,4 @@ pages:
       - "Immutable": "react-library/immutable.md"
   - React Styling:
       - "Scss": "react-styling/sass.md"
+      - "Module": "react-styling/module.md"

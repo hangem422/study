@@ -18,4 +18,5 @@
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
 - **REACT STYLING**
-    - [sass](./react-styling/sass.md)
+    - [Sass](./react-styling/sass.md)
+    - [Module](./react-styling/module.md)
