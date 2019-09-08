@@ -64,8 +64,24 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 ## 3. 컴포넌트 배열 사용하기
 
-작성중...
+리액트 사용의 가장 큰 장점은 UI 엘리먼트와 데이터를 분리할 수 있다는 것입니다. 리액트는 단순한 자바스크립트이기 때문에 리액트 컴포넌트 트리를 더 편하게 구성하기 위한 자바스크립트 로직을 얼마든지 추가할 수 있습니다.
+
+```JSX
+const arr = ['H', 'E', 'L', 'L', 'O'];
+const arrComp = arr.map((spell, index) => (
+  <li key={index}>{spell}</li>
+));
+
+return (
+  <ul>
+    {arrComp}
+  <ul>
+);
+```
+
+배열을 이터레이션해서 자식 엘리먼크의 리스트를 만드는 경우 리액트에서는 각 자식 앨리먼트에 `key` 프로퍼티를 넣어야 합니다. 하지만 위와 같이 `index` 값을 사용하는 것은 권장되지 않습니다.
 
 ## 3. 출처
 
 - [VELOPERT.LOG](https://velopert.com/3626)
+- Learnig React_한빛미디어
