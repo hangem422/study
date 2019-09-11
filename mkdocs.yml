@@ -3,6 +3,8 @@ theme: readthedocs
 
 pages:
   - Home: README.md
+  - CSS:
+      - "Grid": "css/grid.md"
   - Interview:
       - "DocType": "interview/doctype.md"
   - React:
@@ -17,6 +19,7 @@ pages:
       - "HOC": "react/hoc.md"
   - React Library:
       - "Immutable": "react-library/immutable.md"
+      - "Axios": "react-library/axios.md"
   - React Styling:
       - "Scss": "react-styling/sass.md"
       - "Module": "react-styling/module.md"
