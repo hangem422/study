@@ -5,6 +5,7 @@
 ## Contents
 
 - **CSS**
+    - [Flex](./css/flex.md)
     - [Grid](./css/grid.md)
 - **INTERVIEW**
     - [DocType](./interview/doctype.md)

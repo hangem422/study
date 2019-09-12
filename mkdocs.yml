@@ -4,6 +4,7 @@ theme: readthedocs
 pages:
   - Home: README.md
   - CSS:
+      - "Flex": "css/flex.md"
       - "Grid": "css/grid.md"
   - Interview:
       - "DocType": "interview/doctype.md"

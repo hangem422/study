@@ -884,7 +884,7 @@
 </div>
 ```
 
-![css_grid_linename04](../img/css_grid_linename04.png){: style="width:764px;"}
+![css_grid_linename04](../img/css_grid_linename04.png)
 
 ## 17. 출처
 
