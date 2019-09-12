@@ -54,7 +54,7 @@
 }
 ```
 
-<img alt="css_grid_gridcontainer01" src="../img/css_grid_gridcontainer01.png" width=764>
+![css_grid_gridcontainer01](../img/css_grid_gridcontainer01.png)
 
 ## 4. 그리드 트랙
 
@@ -67,7 +67,7 @@
 }
 ```
 
-<img alt="css_grid_gridtrack01" src="../img/css_grid_gridtrack01.png" width=764>
+![css_grid_gridtrack01](../img/css_grid_gridtrack01.png)
 
 ### fr 단위
 
@@ -80,7 +80,7 @@
 }
 ```
 
-<img alt="css_grid_gridtrack02" src="../img/css_grid_gridtrack02.png" width=764>
+![css_grid_gridtrack02](../img/css_grid_gridtrack02.png)
 
 다음 예제에서는 `2fr` 크기의 트랙 하나와 `1fr` 트랙 두 개를 지정하였습니다. 사용 가능한 공간은 4개로 나뉘면서, 공간 두개는 첫 번쨰 트랙에 제공하고 나머지 공간 한 부분씩을 다음 두 트랙에 각각 제공합니다.
 
@@ -146,7 +146,7 @@
 
 그리드는 아이템을 배치할 때 쓸 수 있게 번호가 매겨진 라인을 다동으로 제공합니다. 아래 그림처럼, 그리드가 세 개의 세로 열과 두 개의 가로 행으로 이루어져 있다면, 네 개의 **Grid Line**이 Column으로 자리 잡게 됩니다.
 
-<img alt="css_grid_gridline01" src="../img/css_grid_gridline01.png" width=764>
+![css_grid_gridline01](../img/css_grid_gridline01.png)
 
 ### 라인을 이용한 아이템 배치
 
@@ -183,7 +183,7 @@
 }
 ```
 
-<img alt="css_grid_gridline02" src="../img/css_grid_gridline02.png" width=764>
+![css_grid_gridline02](../img/css_grid_gridline02.png)
 
 ### 단축용법
 
@@ -220,7 +220,7 @@
 }
 ```
 
-<img alt="css_grid_gridline03" src="../img/css_grid_gridline03.png" width=764>
+![css_grid_gridline03](../img/css_grid_gridline03.png)
 
 우리는 여기서 한 발 더 나가 각 영역을 단 하나의 프로퍼티인 `grid-area`로 정의할 수 도 있습니다. `grid-area` 값의 순서는 다음과 같습니다.
 
@@ -313,7 +313,7 @@
 }
 ```
 
-<img alt="css_grid_gridgap01" src="../img/css_grid_gridgap01.png" width=764>
+![css_grid_gridgap01](../img/css_grid_gridgap01.png)
 
 ### 그리드 간격의 단축용법
 
@@ -381,7 +381,7 @@
 }
 ```
 
-<img alt="css_grid_gridzindex01" src="../img/css_grid_gridzindex01.png" width=764>
+![css_grid_gridzindex01](../img/css_grid_gridzindex01.png)
 
 ### 중첩의 순서 조정
 
@@ -410,7 +410,7 @@
 }
 ```
 
-<img alt="css_grid_gridzindex02" src="../img/css_grid_gridzindex02.png" width=764>
+![css_grid_gridzindex02](../img/css_grid_gridzindex02.png)
 
 ## 11. 그리드 정렬
 
@@ -441,7 +441,7 @@
 }
 ```
 
-<img alt="css_grid_gridalign01" src="../img/css_grid_gridalign01.png" width=764>
+![css_grid_gridalign01](../img/css_grid_gridalign01.png)
 
 ## 12. 자동으로 채워지는 그리드 트랙
 
@@ -462,7 +462,7 @@
 }
 ```
 
-<img alt="css_grid_autofill01" src="../img/css_grid_autofill01.png" width=764>
+![css_grid_autofill01](../img/css_grid_autofill01.png)
 
 ### 변동 가능한 트랙의 수
 
@@ -483,7 +483,7 @@
 }
 ```
 
-<img alt="css_grid_autofill02" src="../img/css_grid_autofill02.png" width=764>
+![css_grid_autofill02](../img/css_grid_autofill02.png)
 
 ## 13. 그리드와 단독으로 위치를 지정한 요소
 
@@ -526,7 +526,7 @@
 }
 ```
 
-<img alt="css_grid_absolute01" src="../img/css_grid_absolute01.png" width=764>
+![css_grid_absolute01](../img/css_grid_absolute01.png)
 
 단독을 위치를 지정한 일반 아이템의 경우와 마찬가지로 문서 흐름에서 제외되면서, 자동 배치 규칙에 따라 해당 공간에 다른 아이템들을 배치하게 됩니다. 또한 이로 인해 아이템이 추가 행을 생성하지 않게 되면서 가로 행 3번 라인까지 확장하지 않게 되었습니다.
 
@@ -581,7 +581,7 @@
 }
 ```
 
-<img alt="css_grid_absolute02" src="../img/css_grid_absolute02.png" width=764>
+![css_grid_absolute02](../img/css_grid_absolute02.png)
 
 ## 14. 그리드와 display: contents
 
@@ -615,7 +615,7 @@
 }
 ```
 
-<img alt="css_grid_contents01" src="../img/css_grid_contents01.png" width=764>
+![css_grid_contents01](../img/css_grid_contents01.png)
 
 ## 15. 그리드 영역의 이름 짓기
 
@@ -658,7 +658,7 @@
 }
 ```
 
-<img alt="css_grid_gridname01" src="../img/css_grid_gridname01.png" width=764>
+![css_grid_gridname01](../img/css_grid_gridname01.png)
 
 ### 그리드 셀 비워두기
 
@@ -676,7 +676,7 @@
 }
 ```
 
-<img alt="css_grid_gridname02" src="../img/css_grid_gridname02.png" width=764>
+![css_grid_gridname02](../img/css_grid_gridname02.png)
 
 ### 미디어 쿼리를 이용한 그리드 재정의
 
@@ -747,7 +747,7 @@
 - `grid-auto-columns`
 - `grid-auto-flow`
 
-## 16. 라인에 이름 짓기
+## 라인에 이름 짓기
 
 `grid-template-rows` 그리고 `grid-template-columns` 프로퍼티로 그리드를 정의할 때 그리드에 있는 모든 라인 혹은 일부 라인들에 이름을 지어 줄 수 있습니다. 그리드를 정의할 때, 그리드 라인의 이름은 대괄호 안에 적어줍니다. 라인 이름은 원하시는 것 아묵거나 다 괜찮습니다.
 
@@ -782,7 +782,7 @@
 }
 ```
 
-<img alt="css_grid_linename01" src="../img/css_grid_linename01.png" width=764>
+![css_grid_linename01](../img/css_grid_linename01.png)
 
 ### 라인에 여려개의 이름 지어주기
 
@@ -810,13 +810,13 @@
 </div>
 ```
 
-<img alt="css_grid_linename02" src="../img/css_grid_linename02.png" width=764>
+![css_grid_linename02](../img/css_grid_linename02.png)
 
 ### 잠재적 그리드 라인 이름
 
 이는 역으로도 작용합니다. 이름이 주어진 템플릿 영역은 그에 어울리는 이름이 붙여진 라인을 생성하면서, 이를 이용해서 아이템을 배치할 수 있습니다.
 
-<img alt="css_grid_linename03" src="../img/css_grid_linename03.png" width=764>
+![css_grid_linename03](../img/css_grid_linename03.png)
 
 ### 같은 이름을 가진 여러개의 라인 만들기
 
@@ -884,7 +884,7 @@
 </div>
 ```
 
-<img alt="css_grid_linename04" src="../img/css_grid_linename04.png" width=764>
+![css_grid_linename04](../img/css_grid_linename04.png){: style="width:764px;"}
 
 ## 17. 출처
 
