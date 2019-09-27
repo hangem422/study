@@ -4,6 +4,8 @@
 
 ## Contents
 
+- **JS**
+    - [Promise](./js/promise.md)
 - **CSS**
     - [Flex](./css/flex.md)
     - [Grid](./css/grid.md)
@@ -22,6 +24,7 @@
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
     - [Axios](./react-library/axios.md)
+    - [Redux](./react-library/redux.md)
 - **REACT STYLING**
     - [Sass](./react-styling/sass.md)
     - [Module](./react-styling/module.md)
