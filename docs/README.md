@@ -21,6 +21,7 @@
     - [LifeCycle](./react/lifecycle.md)
     - [DOM](./react/dom.md)
     - [HOC](./react/hoc.md)
+    - [Context API](./react/context.md)
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
     - [Axios](./react-library/axios.md)
@@ -29,3 +30,5 @@
     - [Sass](./react-styling/sass.md)
     - [Module](./react-styling/module.md)
     - [Styled Components](./react-styling/styled-components.md)
+- **SERVER TOOL**
+    - [Nginx](./server-tool/nginx.md)

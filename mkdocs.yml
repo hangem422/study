@@ -20,6 +20,7 @@ pages:
       - "LifeCycle": "react/lifecycle.md"
       - "DOM": "react/dom.md"
       - "HOC": "react/hoc.md"
+      - "Context": "react/context.md"
   - React Library:
       - "Immutable": "react-library/immutable.md"
       - "Axios": "react-library/axios.md"
@@ -28,3 +29,5 @@ pages:
       - "Scss": "react-styling/sass.md"
       - "Module": "react-styling/module.md"
       - "Styled Components": "react-styling/styled-components"
+  - Server Tool:
+      - "Nginx": "server-tool/nginx.md"
