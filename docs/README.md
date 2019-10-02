@@ -26,6 +26,7 @@
     - [Immutable](./react-library/immutable.md)
     - [Axios](./react-library/axios.md)
     - [Redux](./react-library/redux.md)
+    - [Router](./react-library/router.md)
 - **REACT STYLING**
     - [Sass](./react-styling/sass.md)
     - [Module](./react-styling/module.md)

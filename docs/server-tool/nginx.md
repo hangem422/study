@@ -100,7 +100,7 @@ sudo openssl dhparam -out /etc/nginx/dhparam.pem 4096
 
 ### ssl.comf 파일 생성하기
 
-보안 설정이 들어갈 ssl.conf를 만ㄴ들고 이후 nginx 라우팅 설정파일에 include 합니다.
+보안 설정이 들어갈 ssl.conf를 만들고 이후 nginx 라우팅 설정파일에 include 합니다.
 
 ```bash
 sudo touch /etc/nginx/snippets/ssl.conf
