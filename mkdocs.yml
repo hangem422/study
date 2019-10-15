@@ -34,7 +34,7 @@ pages:
       - "Module": "react-styling/module.md"
       - "Styled Components": "react-styling/styled-components"
   - Tool:
-      - "Sublime Text": "tool/sunlime-text.md"
+      - "Sublime Text": "tool/sublime-text.md"
       - "Z Shell": "tool/zsh.md"
   - Server Tool:
       - "Nginx": "server-tool/nginx.md"

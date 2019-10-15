@@ -204,7 +204,7 @@ const onInsert = useCallvack(e => {
 
 `useCallback`은 함수를 만드는 것, `useMomo`는 함수를 실행하는 것 입니다. `useCallback`에서 함수 내부에 기존 상태 값을 의존해야 할 떄는 꼭 두번쨰 파라미터 안에 포함을 시켜주어야 합니다.
 
-## useRef
+## 7. useRef
 
 useRefHook은 함수형 컴포넌트에서 ref를 쉽게 사용 할 수 있게 해줍니다. `useRef`를 사용하여 `ref`를 설정하면, `useRef`를 통해 만든 객체 안의 current 값이 실제 엘리머트를 가르키게 됩니다.
 
