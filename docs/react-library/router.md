@@ -14,7 +14,9 @@ npm install --save-dev cross-env
 npm install --save query-string
 ```
 
-## 2. NODE_ENV 설정
+## 2. 준비하기
+
+### NODE_ENV 설정
 
 코드를 불러올 때 `../components/Something`으로 불러오던 코드를 `component/Something` 이렇게 불러 올 수 있도록 프로젝트의 루트 경로를 설정하겠습니다.
 
@@ -25,6 +27,22 @@ npm install --save query-string
   "test": "react-scripts test --env=jsdom",
   "eject": "react-scripts eject"
 }
+```
+
+### 컴포넌트 준비
+
+```JSX
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import App from 'shared/App';
+
+const Root = () => (
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+);
+
+export default Root;
 ```
 
 ## 3. Route

@@ -10,6 +10,7 @@ pages:
       - "Grid": "css/grid.md"
   - Interview:
       - "DocType": "interview/doctype.md"
+      - "Pipline": "interview/pipline.md"
   - React:
       - "Introduce": "react/about.md"
       - "Start": "react/start.md"
@@ -21,6 +22,8 @@ pages:
       - "DOM": "react/dom.md"
       - "HOC": "react/hoc.md"
       - "Context": "react/context.md"
+      - "Code Spliting": "react/code-spliting.md"
+      - "Hooks": "react/hooks.md"
   - React Library:
       - "Immutable": "react-library/immutable.md"
       - "Axios": "react-library/axios.md"
@@ -30,5 +33,8 @@ pages:
       - "Scss": "react-styling/sass.md"
       - "Module": "react-styling/module.md"
       - "Styled Components": "react-styling/styled-components"
+  - Tool:
+      - "Sublime Text": "tool/sunlime-text.md"
+      - "Z Shell": "tool/zsh.md"
   - Server Tool:
       - "Nginx": "server-tool/nginx.md"

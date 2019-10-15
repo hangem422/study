@@ -11,6 +11,7 @@
     - [Grid](./css/grid.md)
 - **INTERVIEW**
     - [DocType](./interview/doctype.md)
+    - [Pipline](./interview/pipline.md)
 - **REACT**
     - [Intorduce](./react/about.md)
     - [Start](./react/start.md)
@@ -22,6 +23,8 @@
     - [DOM](./react/dom.md)
     - [HOC](./react/hoc.md)
     - [Context API](./react/context.md)
+    - [Code Spliting](./react/code-spliting.md)
+    - [Hooks](./react/hooks.ms)
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
     - [Axios](./react-library/axios.md)
@@ -31,5 +34,8 @@
     - [Sass](./react-styling/sass.md)
     - [Module](./react-styling/module.md)
     - [Styled Components](./react-styling/styled-components.md)
+- **TOOL**
+    - [Sublime Text](./tool/sublime-text.md)
+    - [Z Shell](./tool/zsh.md)
 - **SERVER TOOL**
     - [Nginx](./server-tool/nginx.md)
