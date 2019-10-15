@@ -24,7 +24,7 @@
     - [HOC](./react/hoc.md)
     - [Context API](./react/context.md)
     - [Code Spliting](./react/code-spliting.md)
-    - [Hooks](./react/hooks.ms)
+    - [Hooks](./react/hooks.md)
 - **REACT LIBRARY**
     - [Immutable](./react-library/immutable.md)
     - [Axios](./react-library/axios.md)
