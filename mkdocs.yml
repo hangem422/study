@@ -11,6 +11,7 @@ pages:
   - Interview:
       - "DocType": "interview/doctype.md"
       - "Pipline": "interview/pipline.md"
+      - "JWT": "interview/jwt.md"
   - React:
       - "Introduce": "react/about.md"
       - "Start": "react/start.md"
