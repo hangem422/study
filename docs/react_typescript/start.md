@@ -319,3 +319,7 @@ class Queu<T> {
   }
 }
 ```
+
+## 7. 출처
+
+- [https://velog.io/@velopert](https://velog.io/@velopert/typescript-basics)

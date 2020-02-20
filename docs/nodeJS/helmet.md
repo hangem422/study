@@ -111,3 +111,10 @@ app.use(
 | child-src               | childSrc             | `<frame>`이나 `<iframe>`과 같은 요소를 사용하여 로드된 웹 작업자나 내포된 검색 컨텍스트에서 가능한 소스를 정의 |
 | connect-src             | connectSrc           | 스크립트 인터페이스를 사용하여 로드할 수 있는 URL 제한                                                         |
 | default-src             | defaultSrc           | 다른 fetch directive들의 fallback으로 제공됨                                                                   |
+| font-src                | fontSrc              | `@font-face`를 사용하여 로드할 수 있는 소스를 지정                                                             |
+| form-action             | formAction           | 지정된 컨텍스트에서 제출 대상으로 사용될 수 있는 URL을 제한                                                    |
+| frame-ancestors         | frameAncestors       | `<frame>`, `<object>`, `<embed>` 혹은 `<applet>`을 사용하여 임베디드 될 페이지의 부모를 지정                   |
+| frame-src               | frameSrc             | `<frame>`과 `<iframe>`과 같은 요소를 사용하여 내포된 검색 컨텍스트를 로드하는데 사용 가능한 소스를 지정        |
+| img-src                 | imgSrc               | 가능한 이미지와 favicon 소스 지정                                                                              |
+| manifest-src            | manifestSrc          | 가능한 manifest 소스 지정                                                                                      |
+| media-src               | mediaSrc             |                                                                                                                |

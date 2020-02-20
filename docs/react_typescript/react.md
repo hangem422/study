@@ -75,4 +75,19 @@ type GreatingProps = {
 }
 ```
 
-#### 함수 props 받아오기
+#### 함수 타입 props 받아오기
+
+다음과 같이 타입을 지정하면 아무것도 리컨하지 않는 함수를 의미합니다.
+
+```TSX
+type GreetingProps = {
+  name: string;
+  mark: string;
+  optional?: string;
+  onClick: (name: string) => void;
+}
+```
+
+## 3. 출처
+
+- [https://velog.io/@velopert](https://velog.io/@velopert/create-typescript-react-component)
