@@ -90,5 +90,3 @@ const api_url = `https://nid.naver.com/oauth2.0/token?grant_type=authorization_c
 | expire_in         | integer | 접근 토큰의 유효 기간                                                |
 | error             | string  | 에러 코드                                                            |
 | error_description | string  | 에러 메시지                                                          |
-
-# 카카오

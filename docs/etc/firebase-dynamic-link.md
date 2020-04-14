@@ -187,3 +187,8 @@ https://your_subdomain.page.link/?link=your_deep_link&apn=package_name[&amv=mini
 | ct           | iTunes Connect 애널리틱스 매개변수입니다. |
 | mt           | iTunes Connect 애널리틱스 매개변수입니다. |
 | pt           | iTunes Connect 애널리틱스 매개변수입니다. |
+
+
+## 4. 출처
+
+- [Firebase](https://firebase.google.com/docs/dynamic-links?hl=ko)
