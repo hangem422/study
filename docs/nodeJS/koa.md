@@ -37,7 +37,7 @@ src 디렉토리를 생성하여 index.js 파일을 만듭니다.
 const Koa = require("koa");
 const app = new Koa();
 
-app.use(ctx => {
+app.use((ctx) => {
   ctx.body = "Hello Koa";
 });
 
@@ -58,7 +58,7 @@ Server is listening to port 4000
 **Koa** 어플리케이션은, 미들웨어의 배열로 구성되어있습니다. `app.use`라는 함수를 사용하여 미들웨어를 어플리케이션에 등록해줍니다.
 
 ```javascript
-app.use(ctx => {
+app.use((ctx) => {
   ctx.body = "Hello Koa";
 });
 ```
@@ -204,3 +204,31 @@ REST API 에서는, 요청의 종류에 따라 다른 HTTP 메소드를 사용�
 - **DELETE:** 데이터를 지울 때 사용됩니다.
 - **PUT:** 데이터를 교체 할 때 사용됩니다.
 - **PATCH:** 데이터의 특정 필드를 수정 할 때 사용됩니다.
+
+##### src/sample/index
+
+```javascript
+const Router = require("koa-router");
+
+const books = new Router();
+
+const handler = (ctx, next) => {
+  ctx.body = `${ctx.request.method} ${ctx.request.path}`;
+};
+
+books.get("/", handler);
+
+books.post("/", handler);
+
+books.delete("/", handler);
+
+books.put("/", handler);
+
+books.patch("/", handler);
+
+module.exports = books;
+```
+
+## 5. 출처
+
+- [Git Book](https://backend-intro.vlpt.us/1/)

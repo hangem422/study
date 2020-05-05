@@ -4,6 +4,14 @@
 
 ## Contents
 
+- **Algorithm**
+    - [Search & Sort](./algorithm/search-sort.md)
+    - [Linked List](./algorithm/linked-list.md)
+    - [Cachung](./algorithm/caching.md)
+    - [Tree](./algorithm/tree.md)
+    - [Heep](./algorithm/heep.md)
+    - [Graph](./algorithm/graph.md)
+    - [String](./algorithm/string.md)
 - **Front Interview**
     - [Doctype](./front_interview/doctype.md)
     - [meta](./front_interview/meta.md)
