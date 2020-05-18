@@ -36,7 +36,7 @@
 
 #### Prerender
 
-만약에 검색엔진 최적화 때문에 서버사이드 렌더링을 구현해야 하는데, 프로젝트의 구조가 복잡해지는게 싫고, 또 성능이 받쳐주지 않는다면 `Prerender`를 사용합니ㅏㄷ. `Prerender`는 리액트 코드를 문자열 형태로 변환하는게 아니라, 자바스크립트 렌더링 엔진을 가지고있어서 자바스크립트 코드를 신행시켜 뷰를 렌더링한 겨로가 값을 반환하빈다. 렌더링 속도는 그렇게 빠르지 않기 때문에, 이 서브스는 오직 검색엔진 최적화를 위해서만 사용됩니다. 이 서비스는 유료 서비스이지만, 250개의 페이지까지는 무료입니다.
+만약에 검색엔진 최적화 때문에 서버사이드 렌더링을 구현해야 하는데, 프로젝트의 구조가 복잡해지는게 싫고, 또 성능이 받쳐주지 않는다면 `Prerender`를 사용합니다. `Prerender`는 리액트 코드를 문자열 형태로 변환하는게 아니라, 자바스크립트 렌더링 엔진을 가지고있어서 자바스크립트 코드를 실행시켜 뷰를 렌더링한 겨로가 값을 반환하빈다. 렌더링 속도는 그렇게 빠르지 않기 때문에, 이 서브스는 오직 검색엔진 최적화를 위해서만 사용됩니다. 이 서비스는 유료 서비스이지만, 250개의 페이지까지는 무료입니다.
 
 ## 3. Koa
 
@@ -52,7 +52,7 @@ npm install koa
 const koa = require("koa");
 const app = new Koa();
 
-app.use(ctx => {
+app.use((ctx) => {
   ctx.body = "Hello World";
 });
 
@@ -76,7 +76,7 @@ const path = require("path");
 const app = new Koa();
 
 app.use(serve(path.resolve(__dirname, "../build/")));
-app.use(ctx => {
+app.use((ctx) => {
   ctx.body = "Hello World";
 });
 
@@ -94,7 +94,7 @@ const indexHtml = fs.readFileSync(
   path.resolve(__dirname, "../build/index.html"),
   { encoding: "utf8" }
 );
-app.use(ctx => {
+app.use((ctx) => {
   ctx.body = indexHtml;
 });
 ```
@@ -120,7 +120,7 @@ import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router";
 import App from "shared/App";
 
-const render = location =>
+const render = (location) =>
   RactDOMServer.renderToString(
     <StaticRouter location={location}>
       <App />
@@ -140,7 +140,7 @@ const render = location =>
 module.export = {
   // ...
   serverRenderJs: resolveApp("src/server/render.js"), // 서버용 엔트리 경로
-  server: resolveApp("server/render") // 서버렌더링용 모듈 번들링 후 저장 경로
+  server: resolveApp("server/render"), // 서버렌더링용 모듈 번들링 후 저장 경로
 };
 ```
 
@@ -175,12 +175,225 @@ module.exports = {
     // 정해준 서버 경로에 render.js라는 파일명으로 저장합니다.
     path: paths.server,
     filename: 'render.js',
-    libraryTarget: 'commonjs2' // node에서 불러올 수 있도록, commonjs2 스타일로 번들링 합니다
+    libraryTarget: 'commonjs2', // node에서 불러올 수 있도록, commonjs2 스타일로 번들링 합니다
   },
   resolver: {
     modules: ['node_modules', path.appNodeModules].concat(
-      process.env.NODE_PATH.split(path,.de)
-    )
+      process.env.NODE_PATH.split(path,.delimiter).filter(Boolean)
+    ),
+    extenstions: ['.js', '.json', '.jsx'],
+  }
+  module: {
+    strictExportPresence: true,
+    rules: [
+      // 자바스크립트 이외의 파일들을 무시합니다.
+      {
+        exclude: [
+          /\.(js|jsx)$/,
+          /\.json$/,
+        ],
+        loader: 'ignore-loader',
+      }
+      // 자바스크립트는 Babel을 통하여 트렌스파일링합니다.
+      {
+        test: /\.(js|jsx)$/,
+        include: paths.appSrc,
+        loader: require.resolve('babel-loader'),
+        options: {
+          cacheDirectory: true,
+        }
+      }
+    ]
+  },
+  plugins: [
+    new webPack.DefinePlugin(env.stringified),
+    new CaseSensitivePathsPlugin(),
+    new WatchMissingNodeModulesPlugin(path.appNodeModules),
+  ]
+}
+```
+
+### 서버용 빌드 스크립트 생성
+
+#### scripts/build.server.js
+
+```javascript
+"use strict";
+
+process.env.BABEL_ENV = "production";
+process.env.NODE_ENV = "production";
+
+/* 나중에 클라이언트 쪽 코드에서 process.env.APP_ENV 값을 통하여 서버일때만, 혹은 브라우저 때만 특정한 작업을 하도록 설정 할 수 있습니다. */
+process.env.APP_ENV = "server";
+
+process.on("unhandledRejection", (err) => {
+  throw err;
+});
+
+require("../config/env");
+
+const webpack = require("webpack");
+const config = require("../config/webpack.config.serveer");
+const paths = require("../config/paths");
+const checkRequiredFiles = require("react-dev-utils/checkRequiredFiles");
+const formatWebpackMessages = require("react-dev-utils/formatWebpackMessages");
+
+if (!checkRequiredFiles([paths.serverRenderJs])) {
+  process.exit(1);
+}
+
+function build() {
+  console.log("Create an server production build...");
+
+  let compiler = webpack(config);
+  return new Promise((resolve, reject) => {
+    compiler.run((err, stats) => {
+      if (err) return reject(err);
+      const message = formatWebpackMessages(stats.toJson({}, true));
+      if (message.errors.length) {
+        return reject(new Error(messages.errors.join("\n\n")));
+      }
+      return resolve({ stats, warnings: messges.warnings });
+    });
+  });
+}
+
+build();
+```
+
+그 다음에, 웹팩에서 `APP_ENV`를 인식할 수 있도록, `config/env.js` 파일의 `getClinetEnvironment` 함수에 다음과 같이 APP_ENV를 널어주세요
+
+```javascript
+function getClientEnvironment(publicUrl) {
+  const raw = Object.keys(process.env)
+    .filter((key) => REACT_APP.test(key))
+    .reduce(
+      (env, key) => {
+        env[key] = process.env[key];
+        return env;
+      },
+      {
+        NODE_ENV: process.env.NODE_ENV || "development",
+        PUBLIC_URI: publicUrl,
+        // APP_ENV 추가
+        APP_ENV: process.env.APP_ENV || "browser",
+      }
+    );
+  // ...
+}
+```
+
+### NPM 스크립트 생성
+
+#### package.json
+
+```json
+{
+  "scripts": {
+    "start": "cross-env NODE_PATH=src node scripts/start.js",
+    "start:server": "node server",
+    "build": "cross-env NODE_PATH=src node scripts/build.js",
+    "build:server": "cross-env NODE_PATH=src node scripts/build.server.js",
+    "test": "node scripts/test.js --env=jsom"
   }
 }
+```
+
+```zsh
+$ npm run build:server
+```
+
+## 서버사이드 랜더링 미들웨어 작성
+
+#### server/render/index.js
+
+html 파닐을 불러온 다음에, 해당 파일의 루트 엘리먼트가 위치한 곳에 렌더링된 문자열을 넣어주고 이를 반환해줍니다.
+
+```javascript
+const fs = require("fs");
+const path = require("path");
+const render = require("./render").default;
+
+const template = fs.readFileSync(
+  path.join(__dirname, "../../build/index.html"),
+  { encoding: "utf8" }
+);
+
+module.exports = (ctx) => {
+  const location = ctx.path;
+  const rendered = render(location);
+  const page = tempate.replate(
+    '<div id="root"></div>',
+    `<div id="root">${renderd}<div>`
+  );
+  ctx.body = page;
+};
+```
+
+#### server/index.js
+
+```javascript
+const Koa = require("koa");
+const server = require("koa-static");
+const path = require("path");
+const app = new Koa();
+
+const render = require("./render");
+
+app.use((ctx, next) => {
+  if (cts.path === "/") return render(ctx);
+  return next();
+});
+app.use(serve(path.resolve(__dirname, "../build/")));
+app.use(render);
+app.listen(3001);
+```
+
+## Redux 적용하기
+
+### 의존성 모듈 설치
+
+Redux의 스토어가 서버쪽에서 생성 될 수도 있고, 클라이언트 쪽엑서 생성 될 수 도 있으니, 스토어를 생성하는 함수를 따로 만들어서 파일로 저장합니다.
+
+```javascript
+import { createStore, applyMiddleware, compose } from "redux";
+
+import modules from "./modules";
+
+const isDevelopment = process.env.NODE_ENV === "development";
+const composeEnhancers = isDevelopment
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  : compose;
+
+const configureStore = (initialState) => {
+  const store = createStore(modules, initalState, composeEnhanceres());
+  if (module.hot) {
+    module.hot.accept("./modules", () => {
+      const nextRootReducer = require("./modules").default;
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
+  return store;
+};
+
+export default configureStore;
+```
+
+그리고 핫 리로딩이 제대로 작동하게 하기 위해서, store.js라는 파일을 따로 생성해주겠습니다. 만약에, configureStore 로출하는 것을 Root.js에서 하게되면, 코드가 다시 불러와질때마다 새 스토어가 만들어지므로 이렇게 파일을 따로 생성합니다. 이 파일을 클라이언트 쪽에서만 사용합니다. 추후, 이 파일에서 서버쪽에서 initialState를 받아와서 생성하는 작업을 진행하겠습니다.
+
+#### redux/store.js
+
+```javascript
+import configureStore from "./configureStore";
+export default configureStore();
+```
+
+### 어플리케이션 연동
+
+Root 컴포넌트에서 BrowserRouter 내부에 App 컴포넌트를 Provider로 감싸시면 됩니다.
+
+```javascript
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 ```
