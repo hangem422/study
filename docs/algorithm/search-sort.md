@@ -130,81 +130,69 @@ function quickSort(arr) {
 ## 빠른 선택
 
 ```javascript
+function swap(arr, index1, index2) {
+  const temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
+}
+
 function partition(arr, left, right) {
   const pivot = arr[Math.floor((left + right) / 2)];
-  while (left <= right) {
-    while (pivot > arr[left]) {
-      left += 1;
-    }
-    while (pivot < arr[right]) {
-      right -= 1;
-    }
-
-    if (left <= right) {
-      if (left !== right) swap(arr, left, right);
-      left += 1;
-      right -= 1;
+  let leftIndex = left;
+  let rightIndex = right;
+  while (leftIndex <= rightIndex) {
+    while (pivot > arr[leftIndex] && leftIndex <= right) leftIndex += 1;
+    while (pivot < arr[rightIndex] && rightIndex >= left) rightIndex -= 1;
+    if (leftIndex <= rightIndex) {
+      if (leftIndex !== rightIndex) swap(arr, leftIndex, rightIndex);
+      leftIndex += 1;
+      rightIndex -= 1;
     }
   }
-  return left;
+  return leftIndex;
 }
 
-function quickSelectInPlace(arr, left, right, k) {
-  const index = partition(arr, left, right);
-  if (index == k - 1) return arr[index];
-  else if (index > k - 1) return quickSelectInPlace(arr, left, index - 1, k);
-  else return quickSelectInPlace(arr, index + 1, right, k);
-}
-
-function quickSelect(arr, k) {
-  return quickSelectInPlace(arr, 0, arr.length - 1, k);
+function quickSelectInPlace(arr, k) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    const index = partition(arr, left, right);
+    if (index > k - 1) right = index - 1;
+    else left = index;
+  }
+  return arr[k - 1];
 }
 ```
 
 ## 병합 정렬
 
 ```javascript
-function merge(arr, left, right, mid) {
-  const tempSize = right - left + 1;
-  const temp = new Array(tempSize);
-  let tempIndex = 0;
-  let leftIndex = left;
-  let rightIndex = mid + 1;
+function merge(left, right) {
+  let result = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-  while (leftIndex <= mid && rightIndex <= right) {
-    if (arr[leftIndex] < arr[rightIndex]) {
-      temp[tempIndex] = arr[leftIndex];
-      leftIndex += 1;
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
     } else {
-      temp[tempIndex] = arr[rightIndex];
-      rightIndex += 1;
+      result.push(right[rightIndex]);
+      rightIndex++;
     }
-    tempIndex += 1;
   }
 
-  let remain = leftIndex > mid ? rightIndex : leftIndex;
-  while (tempIndex < tempSize) {
-    temp[tempIndex] = arr[remain];
-    tempIndex += 1;
-    remain += 1;
-  }
-
-  temp.forEach((val, index) => {
-    arr[left + index] = val;
-  });
+  return [...result, ...left.slice(leftIndex), ...right.slice(rightIndex)];
 }
 
-function mergeSort(arr, left, right) {
-  if (left < right) {
-    const mid = Math.floor((left + right) / 2);
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid + 1, right);
-    merge(arr, left, right, mid);
-  }
-}
+function mergeSort(arr) {
+  if (arr.length === 1) return arr;
 
-function sort(arr) {
-  mergeSort(arr, 0, arr.length - 1);
+  const middle = Math.floor(arr.length / 2);
+  const left = arr.slice(0, middle);
+  const right = arr.slice(middle);
+
+  return merge(mergeSort(left), mergeSort(right));
 }
 ```
 

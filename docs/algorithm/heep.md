@@ -54,11 +54,12 @@ class Heap {
 class MinHeap extends Heap {
   bubbleDown() {
     let index = 0;
-    while (this.leftChild(index) && this.leftChild(index) < this.items[index]) {
+    while (this.leftChild(index)) {
       const smallerIndex =
-        this.rightChild && this.rightChild(index) < this.leftChild(index)
+        this.rightChild(index) && this.rightChild(index) < this.leftChild(index)
           ? this.rigthChildIndex(index)
           : this.leftChildIndex(index);
+      if (this.items[index] < this.items[smallerIndex]) break;
       this.swap(smallerIndex, index);
       index = smallerIndex;
     }
@@ -93,11 +94,12 @@ class MinHeap extends Heap {
 class MaxHeap extends Heap {
   bubbleDown() {
     let index = 0;
-    while (this.leftChild(index) && this.leftChild(index) > this.items[index]) {
+    while (this.leftChild(index)) {
       const biggerIndex =
         this.rightChild(index) && this.rightChild(index) > this.leftChild(index)
-          ? this.rigthChildIndex(index)
+          ? this.rightChildIndex(index)
           : this.leftChildIndex(index);
+      if (this.items[index] > this.items[biggerIndex]) break;
       this.swap(biggerIndex, index);
       index = biggerIndex;
     }

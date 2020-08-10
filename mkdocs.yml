@@ -4,19 +4,28 @@ theme: readthedocs
 pages:
   - Home: README.md
   - Algorithm:
-    - "Search & Sort": "algorithm/search-sort.md"
-    - "Linked List": "algorithm/linked-list.md"
-    - "Cachung": "algorithm/caching.md"
-    - "Tree": "algorithm/tree.md"
-    - "Heep": "algorithm/heep.md"
-    - "Graph": "algorithm/graph.md"
-    - "String": "algorithm/string.md"
+      - "Search & Sort": "algorithm/search-sort.md"
+      - "Linked List": "algorithm/linked-list.md"
+      - "Caching": "algorithm/caching.md"
+      - "Tree": "algorithm/tree.md"
+      - "Heep": "algorithm/heep.md"
+      - "Graph": "algorithm/graph.md"
+      - "String": "algorithm/string.md"
+      - "Dynamic": "algorithm/dynamic.md"
   - Front Interview:
+      - "ECMA": "front_interview/ecma.md"
       - "Doctype": "front_interview/doctype.md"
       - "meta": "front_interview/meta.md"
+      - "Browser Rendering": "front_interview/browser-rendering.md"
+      - "Oop": "front_interview/oop.md"
   - Javascript:
+      - "ES6": "javascript/es6.md"
       - "Async": "javascript/async.md"
       - "Promise": "javascript/promise.md"
+      - "Symbolic Iterator Generator": "javascript/symbol-iterator-generator.md"
+      - "Babel": "javascript/babel.md"
+      - "Webpack": "javascript/webpack.md"
+      - "Memory Leak": "javascript/memory-leak.md"
   - CSS:
       - "Flex": "css/flex.md"
       - "Grid": "css/grid.md"
@@ -48,14 +57,15 @@ pages:
       - "Code Spliting": "react/code-spliting.md"
       - "Server": "react/server.md"
       - "Hooks": "react/hooks.md"
+      - "Manifest Servicesworker": "react/manifest-servicesworker.md"
   - React Typescript:
       - "About": "react_typescript/about.md"
       - "Start": "react_typescript/start.md"
       - "React": "react_typescript/react.md"
       - "Hooks": "react_typescript/hooks.md"
       - "Redux": "react_typescript/redux.md"
-      - "Jest": "react_typescript/jest.md"
       - "Rollup": "react_typescript/rollup.md"
+      - "Redux Saga": "react_typescript/redux-saga.md"
   - Security:
       - "JWT": "security/jwt.md"
       - "HSM": "security/hsm.md"

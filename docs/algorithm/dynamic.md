@@ -236,6 +236,25 @@ function countCoinWaysDPWrapper(coinArr, coinValue) {
 }
 ```
 
+### 동적 알고리즘 축소
+
+```javascript
+function solution(n, money) {
+  const matrix = new Array(n + 1).fill(0);
+  for (let i = 0; i <= n; i += money[0]) {
+    matrix[i] = 1;
+  }
+
+  for (let i = 1; i < money.length; i += 1) {
+    for (let j = money[i]; j <= n; j += 1) {
+      matrix[j] += matrix[j - money[i]];
+    }
+  }
+
+  return matrix[n];
+}
+```
+
 ## 편집 거리 알고림즘
 
 길이 m인 문자열 str1과 길이 n인 문자열 str2가 주어졌을 때 str1을 str2로 변환하기 위한 최소 편집 횟수는 무엇인가?
