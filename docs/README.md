@@ -19,6 +19,7 @@
    - [meta](./front_interview/meta.md)
    - [Browser Rendering](./front_interview/browser-rendering.md)
    - [Oop](./front_interview/oop.md)
+   - [Functional Programming](./front_interview/fp.md)
 - **Javascript**
    - [ES6](./javascript/es6.md)
    - [Async](./javascript/async.md)

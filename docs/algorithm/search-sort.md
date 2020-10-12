@@ -10,6 +10,8 @@ function linearSearch(arr, n) {
 
 ## 이진 검색
 
+이분탐색은 정답을 기계적으로 찾기 힘들지만(eg. 보통 brute-force를 고려하면 지수적으로 나옴), 정답의 범위가 정해졌으며, 추측한 답과 정답과의 오차(+/- 를 알 수 있어야)를 선형시간에 판단 할 수 있는 조건의 문제에 효율적으로 적용 할 수 있다.
+
 ```javascript
 function binarySearch(arr, n) {
   let lowIndex = 0;
