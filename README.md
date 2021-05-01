@@ -9,10 +9,19 @@
 
 ## Interview Data
 
-- Common
+- Data Structure
+- Database
+- Javascript
 - Network
 - Operating System
+- Programming
+- React
+- Web
 
 ## Tech Data
 
-## Other Data
+- CSS
+- Javascript
+- React
+- ReactTS
+- Web
