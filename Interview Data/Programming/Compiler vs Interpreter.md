@@ -19,4 +19,4 @@
 ## 3. 출처
 
 - [컴파일러(Compiler) 와 인터프리터(Interpreter) 의 개념과 차이점 - Jins' Dev Inside](https://jins-dev.tistory.com/entry/Compiler-%EC%99%80-Interpreter-%EC%9D%98-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%B0%A8%EC%9D%B4%EC%A0%90)
-- [컴파일러와 인터프리터의 차이](https://m.blog.naver.com/ehcibear314/221228200531)
+- [컴파일러와 인터프리터의 차이 - 앗구](https://m.blog.naver.com/ehcibear314/221228200531)
