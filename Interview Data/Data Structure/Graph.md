@@ -34,7 +34,7 @@ Undirected Graph에서 각 **정점(Vertex)에 연결된 Edge의 개수**를 Deg
 
 ### 3.2 너비 우선 탐색 (Breadth First Search: BFS)
 
-그래프 상에 존재하는 임의의 한 정점으로부터 연결되어 있느 모든 정점으로 나아갑니다. Tree에서의 Level Order Traversal 형식으로 진행됩니다. BFS에서는 자료구조 Queue를 사용합니다. 연락을 취할 정점의 순서르 ㄹ기록하기 위한 것입니다.
+그래프 상에 존재하는 임의의 한 정점으로부터 연결되어 있느 모든 정점으로 나아갑니다. Tree에서의 Level Order Traversal 형식으로 진행됩니다. BFS에서는 자료구조 Queue를 사용합니다. 연락을 취할 정점의 순서를 기록하기 위한 것입니다.
 
 ## 4. Minimum Spanning Tree
 

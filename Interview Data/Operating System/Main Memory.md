@@ -138,7 +138,7 @@ Multi-programming 을 사용합니다.
 ##### 순차 최초 적합 (Next-fit)
 
 - 최초 적합 전략과 유사합니다.
-- State table에서 맘지막으로 탄색한 위치부터 탐색합니다.
+- State table에서 미지막으로 탄색한 위치부터 탐색합니다.
 - 메모리 영역의 사용 빈도를 균등화합니다.
 
 #### 5.2.2 공간 통합 (Coalescing holes)

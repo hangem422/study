@@ -52,7 +52,7 @@
 
 ### 2.1 MAC 프레임
 
-이더넷 프레임은 7개의 필드로 구성되어 있습니다. Preamble과 SFD(Start fram delimiter) 필드를 제외하는 경우도 있습니다. Preamble과 SFD는 준비되지 않은 상황에서 앞부분의 유실업싱 데이터를 받기위해 물리 계층에서 임의로 첨가하는 비트이기 때문입니다.
+이더넷 프레임은 7개의 필드로 구성되어 있습니다. Preamble과 SFD(Start fram delimiter) 필드를 제외하는 경우도 있습니다. Preamble과 SFD는 준비되지 않은 상황에서 앞부분의 유실없이 데이터를 받기위해 물리 계층에서 임의로 첨가하는 비트이기 때문입니다.
 
 ![MAC 프레임](../_images/network0602.png)
 
@@ -98,7 +98,7 @@
 두번째 개발된 형태는 10Base2로, Thne Ethernet 또는 Cheaper Net이라고 불렸습니다.
 
 - 동축 케이블을 여러 시스템들이 사용하는 LAN입니다. 단, 두께가 10Base5보다 얇습니다.
-- 10Nbps의 속도, 베이스밴드 신호 방식, 한 세그먼트가 200m(실제 185m)에 달합니다.
+- 10Mbps의 속도, 베이스밴드 신호 방식, 한 세그먼트가 200m(실제 185m)에 달합니다.
 
 ![10Base2: Thin Ethernet](../_images/network0606.png)
 

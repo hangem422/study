@@ -21,9 +21,9 @@
 
 무선 LAN 표준인 IEEE 802.11에서는 2개의 MAC 부계층을 정의하고 있습니다.
 
-- **DCF**(Distributed coordination function): PCF는 선택사항으로, 복잡한 접근제어를 수행하며 Infrastructure 모드에서만 운용이 가능합니다. 즉 Ad hoc 모드에서는 안됩니다.
+- **PCF**(Point coordination function): PCF는 선택사항으로, 복잡한 접근제어를 수행하며 Infrastructure 모드에서만 운용이 가능합니다. 즉 Ad hoc 모드에서는 안됩니다.
   - 제어를 통한 경쟁(Contention)이 발생하지 않습니다.
-- **PCF**(Point coordination function): CSMA/CA와 유사합니다.
+- **DCF**(Distributed coordination function): CSMA/CA와 유사합니다.
 
 ![PCF와 DCF의 계층적 위치](../_images/network0702.png)
 

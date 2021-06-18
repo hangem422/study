@@ -124,7 +124,7 @@
 ## 4. Segmentation System
 
 - 프로그램을 논리적 block(segment)으로 분할합니다. Block의 크기가 서로 다를 수 있습니다.
-- 메모리를 미리 준할하지 않습니다. (VPM과 유사)
+- 메모리를 미리 분할하지 않습니다. (VPM과 유사)
 - Sharing/Protection이 용이합니다.
 - Address mapping 및 메모리 관리의 overhead가 큽니다.
 - Internal fragmetation이 발생하지 않지만, External Fragmentation이 발생할 수 있습니다.

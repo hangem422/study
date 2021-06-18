@@ -150,7 +150,7 @@ console.log(obj.x); // 1
 
 ### 3.2 함수 객체의 prototype 프로퍼티
 
-함수 객체만 소유하는 `prototype` 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킵니다. 따라서 생성자 함수로서 호출할 수 없는 함수, 즉 `non-constructor`인 화살표 함수와 ES6 메서드 축약 표현으로 정의한 메서드는 `prototyp` 프로퍼티를 소유하지 않으며 프로토타입도 생성하지 않습니다. 모든 객체가 가지고 있는(엄밀히 말하면 `Object.prototype` 으로부터 상속받은) `__proto__` 접근자 프로퍼티와 함수 객체만이 가지고 있는 `prototype` 프로퍼티는 결국 동일한 프로토타입을 가리킵니다. 하지만 이들 프로퍼티를 사용하는 주체가 다릅니다.
+함수 객체만 소유하는 `prototype` 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킵니다. 따라서 생성자 함수로서 호출할 수 없는 함수, 즉 `non-constructor`인 화살표 함수와 ES6 메서드 축약 표현으로 정의한 메서드는 `prototype` 프로퍼티를 소유하지 않으며 프로토타입도 생성하지 않습니다. 모든 객체가 가지고 있는(엄밀히 말하면 `Object.prototype` 으로부터 상속받은) `__proto__` 접근자 프로퍼티와 함수 객체만이 가지고 있는 `prototype` 프로퍼티는 결국 동일한 프로토타입을 가리킵니다. 하지만 이들 프로퍼티를 사용하는 주체가 다릅니다.
 
 | 구분                        | 소유        | 값              | 사용 주체   | 사용 목적                                                                    |
 | --------------------------- | ----------- | --------------- | ----------- | ---------------------------------------------------------------------------- |
@@ -193,7 +193,7 @@ console.log(me.constructor === Person); // true
 When the Object function is called with optional argument value, the following steps are taken:
 
 1. if NewTarget is neither undefined nor the active function, then
-  a. Retuirn ? OrdinaryCreateFromConstructor(NewTarget, "%Object.prototype%").
+  a. Return ? OrdinaryCreateFromConstructor(NewTarget, "%Object.prototype%").
 2. if value is undefned or null, return OrdinaryObjectCreate(%Object.prototype%).
 3. Return ! ToObject(value)
 
@@ -218,7 +218,7 @@ const obj3 = new Object(123);
 console.log(obj3); // Number {123}
 ```
 
-추상 연선은 ECMAScript 사양에서 내부 동작의 구현 알고리즘을 표현한 것입니다. `Object` 생성자 함수에 인수를 전달하지 않거나 `undefined` 또는 `null`을 인수로 전달하면서 로출하면 내부적으로 추상 연산 `OrdinaryObjectCreate`를 호출하여 `Object.prototype`을 프로토타입으로 갖는 빈 객체를 생성합니다. 객체 리터럴이 평가될 때는 다음과 같이 추상 연산 `OrdinaryObjectCreate`를 호출하여 빈 객체를 생성하고 프로퍼티를 추가하도록 정의되어 있습니다.
+추상 연산은 ECMAScript 사양에서 내부 동작의 구현 알고리즘을 표현한 것입니다. `Object` 생성자 함수에 인수를 전달하지 않거나 `undefined` 또는 `null`을 인수로 전달하면서 로출하면 내부적으로 추상 연산 `OrdinaryObjectCreate`를 호출하여 `Object.prototype`을 프로토타입으로 갖는 빈 객체를 생성합니다. 객체 리터럴이 평가될 때는 다음과 같이 추상 연산 `OrdinaryObjectCreate`를 호출하여 빈 객체를 생성하고 프로퍼티를 추가하도록 정의되어 있습니다.
 
 ```
 12.2.6.7 Runtime Sematics: Evaluation
@@ -280,7 +280,7 @@ function Person(name) {
 
 ### 6.3 생성자 함수에 의해 생성된 객체의 프로토타입
 
-`new` 연산자와 함께 생성자 함수를 호출하여 인스턴스를 생성하면 다른 객체 생성 방식과 마찬가지로 추상 연산 `OrdinaryObjectCreate`가 호출됩니다. 이에 추상 연산 `OrdinaryObjectCreate`에 전달되는 프로토타입은 생성자 함수의 `prototype` 프로퍼티에 바인딩되어 있는 객체입니다. 프로토탕비은 객체입니다. 따라서 일반 객체와 같이 프로토타입에도 프로퍼티를 추가/삭제할 수 있습니다. 그리고 이렇게 추가/삭제한 프로퍼티는 프로토타입 체인에 즉각 반영됩니다.
+`new` 연산자와 함께 생성자 함수를 호출하여 인스턴스를 생성하면 다른 객체 생성 방식과 마찬가지로 추상 연산 `OrdinaryObjectCreate`가 호출됩니다. 이에 추상 연산 `OrdinaryObjectCreate`에 전달되는 프로토타입은 생성자 함수의 `prototype` 프로퍼티에 바인딩되어 있는 객체입니다. 프로토타입은 객체입니다. 따라서 일반 객체와 같이 프로토타입에도 프로퍼티를 추가/삭제할 수 있습니다. 그리고 이렇게 추가/삭제한 프로퍼티는 프로토타입 체인에 즉각 반영됩니다.
 
 ```javascript
 function Person(name) {

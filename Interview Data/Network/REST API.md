@@ -1,6 +1,6 @@
 ## REST API
 
-**REST**(REpresentational State Transfer)는 HTTP/1.0과 1.1의 스펙 작성에 참여했고 어파치 HTTP 서버 프로젝트의 공동 설립자인 로이 필딩(Roy Fielding)의 2000년 논문에서 처음 소개되었습니다. 발표 당시의 웹이 HTTP를 제대로 사용하지 못하고 있는 상황을 보고 HTTP의 장점을 최대한 활용할 수 잇는 아키텍처로서 REST를 소개했고 이는 HTTP 프로토콜을 의도에 맞게 디자인하도록 유도하고 있습니다. REST의 기본 원칙을 성실히 지킨 서브스 디자인을 **RESTful**이라고 표현합니다.
+**REST**(Representational State Transfer)는 HTTP/1.0과 1.1의 스펙 작성에 참여했고 어파치 HTTP 서버 프로젝트의 공동 설립자인 로이 필딩(Roy Fielding)의 2000년 논문에서 처음 소개되었습니다. 발표 당시의 웹이 HTTP를 제대로 사용하지 못하고 있는 상황을 보고 HTTP의 장점을 최대한 활용할 수 잇는 아키텍처로서 REST를 소개했고 이는 HTTP 프로토콜을 의도에 맞게 디자인하도록 유도하고 있습니다. REST의 기본 원칙을 성실히 지킨 서브스 디자인을 **RESTful**이라고 표현합니다.
 
 즉, RESTS는 HTTP를 기반으로 클라이언트가 서버의 리소스에 접근하는 방식을 규정한 아키텍처고, REST API는 REST를 기반으로 서비스 API를 구현한 것을 의미합니다.
 

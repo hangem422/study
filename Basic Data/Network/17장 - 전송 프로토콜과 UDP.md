@@ -34,7 +34,7 @@
 **IANA**(Internet Assigned Numbers Authority)는 포트 번호를 3개의 영역으로 구분하고 있습니다.
 
 - **Well-known ports**: 이 포트는 0 ~ 1023이 할당되며 인터넷 서비스를 위해 사용됩니다.
-- **Registered ports**: 이 포트는 1024 ~ 49151의 번위를 가지며 특정 응용을 위해 기업이 사용합니다.
+- **Registered ports**: 이 포트는 1024 ~ 49151의 범위를 가지며 특정 응용을 위해 기업이 사용합니다.
 - **Dynamic ports**: 이 포트는 49152 ~ 65535의 범위를 가지며 등록되거나 통계되지 않습니다. **임시 포트**(Ephemeral ports)로 이용됩니다.
 
 ## 2. User Datagram
