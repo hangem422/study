@@ -1,8 +1,8 @@
 # SSL
 
-HTTP 프로토콜 상위에 통신시 보안을 위한 SSL 관련 프로토콜이 있는 방식입니다. 실제 통신 내용을 상세히 살펴보면 클라이언트와 서버간 공유하는 암호화키를 가지고 암호화된 데이터가 송수신 되는 방식입니다.
+HTTP는 **IP, TCP, HTTP**로 구성된 **프로토콜 스택**에서 최상위 계층입니다. HTTTP에 보안 기능을 더한 HTTPS는 TLS 혹은 SSL이라 불리기도하며 HTTP와 TCP 사이에 있는 **암호화**(Cryptographic Encryption) 계층입니다. 실제 통신 내용을 상세히 살펴보면 클라이언트와 서버간 공유하는 암호화키를 가지고 암호화된 데이터가 송수신 되는 방식입니다.
 
-![network_interview_http_https](../_images/network-ssl01.jpeg)
+![network_interview_http_https](../_images/network-ssl01.png)
 
 ## 1. SSL과 TLS
 
@@ -121,4 +121,5 @@ SSL 방식을 이용해서 통신을 하는 브라우저와 서버 역시 Handsh
 
 ## 5. 출처
 
-[[정보 보안] SSL(Secure Socket Layer) 이란 - 길은 가면, 뒤에 있다](https://12bme.tistory.com/80)
+- [[정보 보안] SSL(Secure Socket Layer) 이란 - 길은 가면, 뒤에 있다](https://12bme.tistory.com/80)
+- HTTP 완벽 가이드 - 프로그래밍 인사이트
