@@ -22,7 +22,7 @@ Undirected Graph에서 각 **정점(Vertex)에 연결된 Edge의 개수**를 Deg
 
 ### 2.2 인접 리스트 (Adjacent List): 연결 리스트를 사용하는 방법
 
-그래프의 연결 관계르 1차원 배열로 나타내는 방식입니다. adj[i]는 노드 i에 연결된 노드들을 원소로 갖습니다. Vertex의 Adjacent List를 확인해봐야 하므로 Vertex간 연결되어있는지 확인하는데 오래 걸립니다. Space Complexity는 O(E + V)입니다. Sparse Graph(Node 수보다 Edge수가 적은 그래프)를 표현하는데 적당한 방법입니다.
+그래프의 연결 관계를 1차원 배열로 나타내는 방식입니다. adj[i]는 노드 i에 연결된 노드들을 원소로 갖습니다. Vertex의 Adjacent List를 확인해봐야 하므로 Vertex간 연결되어있는지 확인하는데 오래 걸립니다. Space Complexity는 O(E + V)입니다. Sparse Graph(Node 수보다 Edge수가 적은 그래프)를 표현하는데 적당한 방법입니다.
 
 ## 3. 그래프 탐색
 
