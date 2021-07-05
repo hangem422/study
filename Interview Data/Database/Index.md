@@ -1,6 +1,12 @@
 # Index
 
-## 1. Index의 성능과 고려해야할 사항
+## 1. 인덱스란?
+
+![인덱스와 테이블](../_images/database-index01.png)
+
+인덱스란 추가적인 쓰기 작업과 저장 공간을 활용하여 데이터베이스 테이블의 검색 속도를 향상시키기 위한 자료구조입니다. 데이터 베이스의 index는 책의 색인과 같으며, 데이터와 데이터의 위치를 포함한 자료구조를 생성하여 빠르게 조회살 수 있도록 돕습니다. 인덱스를 활용하면 데이터를 조회하는 SELECT 이외에도 UPDATE나 DELETE의 성능이 함께 향상됩니다. 그러한 이유는 해당 연상을 수행하려면 해당 대상을 조회해야만 작업을 할 수 있기 때문입니다.
+
+## 2. Index의 성능과 고려해야할 사항
 
 SELECT 쿼리의 성능을 월등히 향상시키는 Index는 항상 좋은 것일까요? 쿼리문의 성능을 향상시킨다는데 모든 컬럼에 Index를 생성해두면 빠르지 않을까요? 결론부터 말하자면 그렇지 않습니다. 우선 첫 번째 이유는 Index를 생성하게 되면 INSERT, DELETE, UPDATE 쿼리문을 실행할 때 별도의 과정이 추가적으로 발생합니다. INSERT의 경우 Index에 대한 데이터도 추가해야 하므로 그만큼 성능에 손실이 따릅니다. DELETE의 경우 Index에 존재하는 값은 삭제하지 않고 사용 안한다는 표시로 남게 됩니다. 즉 Row의 수는 그대로인 것입니다. 이 작업이 반복되면 어떻게 될까요?
 
@@ -12,19 +18,23 @@ SELECT 쿼리의 성능을 월등히 향상시키는 Index는 항상 좋은 것�
 
 왜 성별이나 나이는 인덱스를 생성하면 비효율적일까요? 10000 레코드에 해당하는 테이블에 대해서 2000 단위로 성별 인덱스를 생성한다고 가정합시다. 값의 Range가 적은 성별은 인덱스로 읽고 다시 한 번 디스크 I/O가 발생하기 때문에 그 만큼 비효율적입니다.
 
-## 2. Index 자료 구조
+## 3. Index 자료 구조
 
 ### 2.1 B+-Tree 인덱스 알고리즘
 
-일반적으로 사용되는 인덱스 알고리즘은 B+-Tree 알고리즘입니다. B+-Tree 인덱스는 칼럼의 값을 변형하지 않고(사실 값의 이부분만 잘라서 관리합니다.), 원래의 값을 이용해 인덱싱하는 알고리즘입니다.
+일반적으로 사용되는 인덱스 알고리즘은 B+-Tree 알고리즘입니다. B+-Tree 인덱스는 칼럼의 값을 변형하지 않고(사실 값의 이부분만 잘라서 관리합니다), 원래의 값을 이용해 인덱싱하는 알고리즘입니다.
 
 #### 2.1.1 B- Tree
 
-각 Node에는 여러개의 Key를 갖고 있고 각 Key에 대응하는 Data도 함께 가지고 있습니다. 하나의 Node에 여러개의 Key을 가지고 있기 때문에 Block 단위로 Data를 Read/Write하는 Data 환경에서는 Binary Search Tree 보다는 B- Tree를 이용하는 것이 유리합니다.
+각 Node에는 여러개의 Key를 갖고 있고 각 Key에 대응하는 Data도 함께 가지고 있습니다. B-tree는 균형트리이기 때문에 어떤 값에 대해서도 같은 시간에 결과를 얻을 수 있습니다(트리 높이가 다른 경우, 약간의 차이는 있겠지만 O(logN)이라는 시간 복잡도를 구할 수 있습니다). 그러나, B-tree 처음 생성 당시는 균형 트리이지만 테이블 갱신(INSERT/UPDATE/DELETE)의 반복을 통해 서서히 균형이 깨지고, 성능도 악화됩니다. 어느 정도 자동으로 균형을 회복하는 기능이 있지만, 갱신 빈도가 높은 테이블에 작성되는 인덱스 같은 경우 인덱스 재구성을 해서 트리의 균형을 되찾는 작업이 필요합니다.
+
+B-tree는 Binary search tree와 유사하지만, 한 노드 당 자식 노드가 2개 이상 가능합니다. 또한 하나의 Node에 여러개의 Key을 가지고 있기 때문에 Block 단위로 Data를 Read/Write하는 Data 환경에서는 Binary Search Tree 보다는 B- Tree를 이용하는 것이 유리합니다.
 
 #### 2.1.2 B+ Tree
 
-B+ Tree는 B- Tree를 개량한 Tree입니다. B- Tree 처럼 모든 Leaf Node는 동일한 Depth를 갖습니다. B- Tree와의 가장 큰 차이점은 Inner Node에는 Key만 저장되고, Leaf Node에 Key와 Data를 함꼐 저장한다는 점입니다. B- Tree에 비하여 쉬운 순회가 가능합니다.
+B+ Tree는 B- Tree를 개량한 Tree입니다. B- Tree 처럼 모든 Leaf Node는 동일한 Depth를 갖습니다. B- Tree와의 가장 큰 차이점은 Inner Node에는 Key만 저장되고, Leaf Node에 Key와 Data를 함께 저장한다는 점입니다. 리프노드들은 LinkedList로 연결되어 있다. 데이터베이스의 인덱스 컬럼은 부등호를 이용한 순차 검색 연산이 자주 발생될 수 있다. 이러한 이유로 BTree의 리프노드들을 LinkedList로 연결하여 순차검색을 용이하게 하는 등 B- Tree를 인덱스에 맞게 최적화하였다. (물론 Best Case에 대해 리프노드까지 가지 않아도 탐색할 수 있는 B- Tree에 비해 무조건 리프노드까지 가야한다는 단점도 있다.)
+
+![B+ Tree](../_images/database-index02.png)
 
 ### 2.2 Hash 인덱스 알고리즘
 
@@ -42,11 +52,9 @@ B+ Tree는 B- Tree를 개량한 Tree입니다. B- Tree 처럼 모든 Leaf Node�
 
 클러스터드 인덱스는 테이블 당 한 개만 생성할 수 있습니다. 프라이머리 키에 대해서 적용되기 때문입니다. 이에 반해 non 클러스터드 인덱스는 테이블당 여러개를 생성할 수 있습니다.
 
-## 5. Composite Index
-
-인덱스로 설정하는 필드의 속성이 중요합니다. Title, Author 순서로 인덱스를 설정한다면, Title을 Search하는 경우, Index를 설정한 효과를 볼 수 있지만, Author 만으로 Search하는 경우 Index를 생성한 것이 소용 없어집니다. 따라서 SELECT 질의를 어떻게 할 것인가가 인덱스를 어떻게 생성할 것인가에 대해 많은 영향을 끼치게 됩니다.
-
 ## 6. 출처
 
 - [Interview_Question_for_Beginner - JaeYeopHan](https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Database#index)
+- [[Database] 인덱스(index)란? - 망나니개발자](https://mangkyu.tistory.com/97)
 - [B-Tree, B+ Tree - Ssup2 Blog](https://ssup2.github.io/theory_analysis/B_Tree_B+_Tree/)
+- [[MySQL] B-tree, B+tree란? (인덱스와 연관지어서) - Carry On Programming](https://zorba91.tistory.com/293)
