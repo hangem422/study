@@ -97,7 +97,7 @@ OS가 프로세스 관리에 필요한 정보를 저장하는 곳으로, 프로�
   - Program check interrupt
   - Machine check interrupt
   - Inter-process interrupt
-  - System call iterrupt
+  - System call interrupt
 
 ![Interrupt](../_images/os-process09.png)
 
